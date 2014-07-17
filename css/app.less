@@ -1,0 +1,331 @@
+@white: #ffffff;
+@blue: #3498db;
+@grey: #dedede;
+
+/* 
+	main
+*/ 
+.preloader-search{
+	display: none;
+}
+
+.preloader-movie{
+	position: absolute;
+	margin-top: 10px;
+	margin-left: 10px;
+	z-index: 10;
+}
+
+.statusbar-overlay{
+	background-color: @blue;
+}
+
+/*
+	search
+*/
+#input-search{
+	padding: 5px;
+	border: 1px solid @blue;
+	border-radius: 3px;
+	-webkit-box-shadow:inset 0 0 0px #000;
+       -moz-box-shadow:inset 0 0 0px #000;
+            box-shadow:inset 0 0 0px #000;
+}
+
+#input-search::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/*
+	main content
+*/
+.main-content, .search-content{
+	.list-block{
+		margin: 0px 0px;
+	}
+	
+	.movie-list{	
+		.list-block{
+			.item-inner{
+				border-bottom: 1px solid @grey;	
+			}
+			
+			.item-content{
+				padding: 0px;
+			}
+			
+			ul{
+				border: none;
+				
+				li{
+					.item-movie-info{
+						margin-top: 0px;
+						color: #434343;
+					}
+					
+					.item-movie-info-rating{
+						color: @blue;
+						font-size: 22px;
+						margin-bottom: 5px;
+					}
+				}
+			}
+		}
+		
+		.list-block.media-list .item-media, .list-block li.media-item .item-media {
+			padding-top: 0px;
+			padding-bottom: 0px;
+		}
+	}
+}
+
+/*
+	movie
+*/
+.movie-page{
+	.content-block{
+		margin: 0px 0px;
+		
+		.content-block-inner{
+			border: none;
+		}
+		
+		.movie-inner-image{
+			padding: 15px 15px;
+			background-color: @blue;
+			
+			.movie-image-content{
+				display: block;
+				position: relative;
+				
+				img{
+					position: relative;
+					z-index: 100;
+				}
+			}
+			
+			ul{
+				margin: 0px 0px;
+				list-style-type: none;
+				font-size: 45px;
+				margin-left: -10px;
+				
+				.movie-vote{
+					position: absolute;
+					color: #6d6d72;
+					z-index: 10000;
+					font-size: 12px;
+					text-align: center;
+					margin-top: 29px;
+					width: 40px;
+					margin-left: -42px;
+				}
+				
+				li{
+					color: @white;
+					margin-bottom: 15px;
+					
+					a{
+						color: @white;
+					}
+				}
+				
+				li:last-child{
+					margin-bottom: 0px;
+				}
+			}
+		}
+		
+		.movie-inner-content{
+			padding: 15px 15px;
+			
+			.buttons-row .button{
+				border-radius: 0px 0px 0px 0px;
+				color: @blue;
+				border-top: none;
+				border-left: none;
+				border-right: none;
+				border-bottom: 1px solid @blue;
+			}
+			
+			.buttons-row .button.active{
+				background-color: @blue;
+				color: @white;
+			}
+			
+			.tab{
+				.list-block{
+					margin: 0px 0px;
+					
+					.item-inner{
+						border-bottom: 1px solid @grey;	
+					}
+					
+					.item-content{
+						padding: 0px;
+					}
+				}
+				
+				.content-block{
+					padding: 0px 0px;
+					
+					span{
+						display: block;
+						padding-top: 15px;
+					}
+				}
+			}
+			
+			.movie-list-credits {
+				list-style-type: none;
+				margin-left: -40px !important;
+				
+				.item-media{
+					padding-top: 0px !important;
+					padding-bottom: 0px !important;
+				}
+				
+			}
+			
+			.movie-list-genres{
+				display: inline;
+				list-style: none;
+				margin-left: -40px;
+				
+				li{
+					display: inline;
+				}
+				
+				li:after {
+				  	content: ", ";
+				}
+				
+				li:last-child:after {
+				    content: ""
+				}
+			}
+		}
+	}
+}
+
+/*
+	panel
+*/
+.panel{
+	background-color: @blue;
+	
+	.list-block{
+		margin: 0px 0px;
+		
+		ul{
+			border: none;
+		}
+	}
+}
+
+
+.navbar {
+	border-bottom: none;
+	background: @blue;
+	color: @white;
+	a.link {
+		color: @white;
+	}
+}
+.contacts-list {
+	margin: 0px;
+}
+i.icon-plus {
+	height: 25px;
+	font-size: 31px;
+	line-height: 20px;
+	font-weight: 100;
+}
+.ion-ios7-person {
+	color: @blue;
+	font-size: 25px;
+	line-height: 20px;
+}
+.ion-ios7-football-outline {
+	color: @blue;
+	font-size: 22px;
+	line-height: 20px;
+}
+.ion-ios7-telephone-outline {
+	color: @blue;
+	font-size: 24px;
+	line-height: 20px;
+	padding-left: 2px;
+}
+
+/*
+	Android optimization hacks
+*/
+// Navbar animation
+html.android .navbar-from-right-to-center .left.sliding .back.link .icon,
+html.android .navbar-from-center-to-right .left.sliding .back.link .icon,
+html.android .navbar-from-center-to-left .left.sliding .back.link .icon,
+html.android .navbar-from-left-to-center .left.sliding .back.link .icon {
+	-webkit-transition-duration: 200ms;
+	transition-duration: 200ms;
+}
+html.android .navbar-from-right-to-center .sliding,
+html.android .navbar-from-center-to-right .sliding,
+html.android .navbar-from-center-to-left .sliding,
+html.android .navbar-from-left-to-center .sliding {
+	-webkit-transition-duration: 200ms;
+	transition-duration: 200ms;
+}
+// Page Animations
+html.android .page-from-right-to-center {
+	-webkit-animation: pageFromRightToCenterDegrade 200ms forwards;
+	animation: pageFromRightToCenterDegrade 200ms forwards;
+}
+html.android .page-from-center-to-right {
+	-webkit-animation: pageFromCenterToRightDegrade 200ms forwards;
+	animation: pageFromCenterToRightDegrade 200ms forwards;
+}
+html.android .page-on-left {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+html.android .page-from-center-to-left {
+	-webkit-animation: emptyAnimation 50ms forwards;
+	animation: emptyAnimation 50ms forwards;
+}
+html.android .page-from-left-to-center {
+	-webkit-animation: emptyAnimation 50ms forwards;
+	animation: emptyAnimation 50ms forwards;
+}
+@-webkit-keyframes emptyAnimation {
+	from {}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes emptyAnimation {
+	from {}
+	to {
+		opacity: 1;
+	}
+}
+// Remove sticky notes if android
+html.android .list-block .list-group-title {
+	display: none;
+}
+// Switch
+html.android .label-switch input[type="checkbox"] + .checkbox {
+	-webkit-transition-duration: 0ms;
+	transition-duration: 0ms;
+}
+html.android .label-switch input[type="checkbox"] + .checkbox:before {
+	-webkit-transition-duration: 0ms;
+	transition-duration: 0ms;
+}
+html.android .label-switch input[type="checkbox"] + .checkbox:after {
+	-webkit-transition-duration: 0ms;
+	transition-duration: 0ms;
+}

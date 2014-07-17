@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="with-statusbar-overlay">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<title>rMovies</title>
+	<link rel="stylesheet" href="lib/css/framework7.css">
+	<link rel="stylesheet" href="lib/css/ionicons.css">
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<body onload="onLoad()">
+	<div class="statusbar-overlay"></div>
+	<div class="panel panel-left panel-reveal">
+        <div class="list-block">
+			<div class="list-group">
+				<ul>
+					<li class="item-content list-panel-now close-panel item-link">
+						<div class="item-inner">
+							<div class="item-title">Now playing</div>
+						</div>
+					</li>
+					<li class="item-content list-panel-upcoming close-panel item-link">
+						<div class="item-inner">
+							<div class="item-title">Upcoming</div>
+						</div>
+					</li>
+					<li class="item-content list-panel-top-rated close-panel item-link">
+						<div class="item-inner">
+							<div class="item-title">Top rated</div>
+						</div>
+					</li>
+					<li class="item-content list-panel-popular close-panel item-link">
+						<div class="item-inner">
+							<div class="item-title">Popular</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+        </div>
+    </div>
+    
+	<!-- Views-->
+	<div class="views">
+		<div class="view view-main navbar-fixed">
+			<div class="navbar">
+				<div class="navbar-inner">
+                    <div class="left">
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars-white"></i></a>
+                    </div>
+                    <div class="center sliding contacts-list-header">rMovies</div>
+                    <div class="right">
+                        <a href="#" class="link icon-only open-search open-popup"><i class="icon ion-ios7-search"></i></a>
+                    </div>
+				</div>
+			</div>
+			<div class="pages">
+				<div data-page="index" class="page">
+                    <div class="page-content main-content"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="popup">
+		<div class="view navbar-fixed">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="left">
+						<input type="text" id="input-search" class="input-search" placeholder="Search movie...">
+						<div class="preloader preloader-white preloader-search"></div>
+					</div>
+					<div class="right"><a href="#" class="link close-popup">Cancel</a></div>
+				</div>
+			</div>
+			<div class="pages">
+				<div data-page="search" class="page">
+					<div class="page-content search-content"></div>
+				</div>
+			</div>
+		</div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="lib/framework7.js"></script>
+<script type="text/javascript" src="lib/lodash.js"></script>
+<script type="text/javascript" src="lib/tmdb.min.js"></script>
+<script data-main="app" src="lib/require.js"></script>
+<script type="text/javascript" src="lib/handlebars.ext.js"></script>
